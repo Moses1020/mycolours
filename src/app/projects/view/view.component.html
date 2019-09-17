@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="project">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="card-header">
+              <p class="card-category clrs-h1-font">
+                Project : {{ (project)?.name }}
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-header pull-right">
+              <button *ngIf="displayCompany" class="btn-link btn-magnify" (click)="displayProject()">Back</button>
+              <!-- <button class="btn-link btn-magnify" (click)="dot()">Update</button> -->
+              <button class="btn-link btn-magnify" (click)="refreshProject()"> 
+                <!-- <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i> -->
+                  Refresh
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <code>The Projects Reports</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,89 @@
+<div class="main-content" *ngIf="company">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="row">
+          <div class=" col-md-9">
+            <div class="card-header">
+              <p class="card-category clrs-h1-font">
+                <!-- style="height: 28px; font-size: 8; -->
+                Company : {{ (company)?.name }}
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 pull-right">
+                <!-- &body=Colours%20Is%20invited%20to%20a%20big%20summer%20party! -->
+            <div class="card-header pull-right">
+              <button class="btn-link btn-magnify" (click)="printReport()">Print</button> <!--  *ngIf="displayDept" -->
+              <!-- <a href="mailto:someone@example.com? &subject=Welcome%20to%20Colours &body=Colours%20Is%20inviting%20you%20to%20join%20Colours%20System%20 -->
+                <!-- " target="_top"> *ngIf="displayDept" -->
+                <!-- Email -->
+              <!-- </a> -->
+              <a href="mailto:schirigo@gmail.com" data-rel="external">Email</a>
+
+
+              <button class="btn-link btn-magnify" (click)="doc$(company.id); refreshCompany()">
+                 <!-- <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i> -->
+                Refresh</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" style="margin-top: -20">
+          <div>
+            <code>Hello Reports</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="row">
+          <div class=" col-md-9">
+            <div class="card-header">
+              <p class="card-category clrs-h1-font">
+                <!-- style="height: 28px; font-size: 8; -->
+                Company Reports
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 pull-right">
+                <!-- &body=Colours%20Is%20invited%20to%20a%20big%20summer%20party! -->
+            <div class="card-header pull-right">
+              <button class="btn-link btn-magnify" (click)="printReport()">Print</button> <!--  *ngIf="displayDept" -->
+              <!-- <a href="mailto:someone@example.com? &subject=Welcome%20to%20Colours &body=Colours%20Is%20inviting%20you%20to%20join%20Colours%20System%20 -->
+                <!-- " target="_top"> *ngIf="displayDept" -->
+                <!-- Email -->
+              <!-- </a> -->
+              <a href="mailto:schirigo@gmail.com" data-rel="external">Email</a>
+              
+              <button class="btn-link btn-magnify" (click)="doc$(company.id); refreshCompany()">
+                 <!-- <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i> -->
+                Refresh</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" style="margin-top: -20">
+          <div>
+            <code>Hello Reports</code>
+          </div>
+          <!-- <div *ngFor= "let item of todayTasks">
+            <span>{{ user.name | async}}</span>&nbsp;&nbsp;
+          </div> -->
+        </div>
+        <div class="row">
+          <label class="col-md-4 col-form-label">Start Date</label>
+          <div class="col-md-7">
+            <div class="form-group">
+              <input type="date" [(ngModel)]="pickedDate" name="startD" class="form-control">
+            </div>
+          </div>
+        </div>
+        <button (click)= "pickDate()">Pick date </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

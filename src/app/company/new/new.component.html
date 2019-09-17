@@ -1,0 +1,79 @@
+<div class="main-content"> 
+ 
+  <div class = "row clrs-h1-font"><b>{{ user.name }}</b> </div>
+  <br>
+  <div class="spacer" style="height: 2em"></div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="clrs-h4-font">All sub-tasks</div><br>
+      <div *ngFor= "let item of allActions | async">
+        <span>{{ item.name }}</span>&nbsp;&nbsp;
+        <span>{{ item.startDate }}</span>&nbsp;&nbsp;
+        <span>{{ setTim }}</span>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="clrs-h4-font">Daily Report</div><br>
+      <div *ngFor= "let item of todayTasks">
+        <span>{{ item.name }}</span>&nbsp;
+        <span>{{ item.actualStart | date}}</span>&nbsp;
+        <span>{{ item.endDate }}</span>&nbsp;
+        <span>{{ item.totalHours }}</span>&nbsp;
+        <span>{{ item.complete }}</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="clrs-h4-font">Daily Plan </div><br>
+      <div *ngFor= "let item of todaysubtasksArr">
+        <span>{{ item.name }}</span>&nbsp;&nbsp;
+        <span>{{ item.startDate }}</span>&nbsp;&nbsp;
+        
+      </div>
+    </div>
+  </div>
+  <!-- <p>
+    Colours Users List
+  </p> -->
+  <!-- <div *ngFor= "let item of colUsers | async">
+    {{ item.name }}
+  </div> -->
+  <div class="row">
+    <div class="col-sm-3">
+      <h1>Sub task </h1>
+      <div *ngFor= "let item of todayTasks">
+        <span>{{ item.name }}</span>&nbsp;&nbsp;
+      </div>
+    </div>
+  
+    <div class="col-sm-3">
+      <h1>Act Start </h1>
+      <div *ngFor= "let item of todayTasks">
+    
+        <span>{{ item.actualStart | date}}</span>&nbsp;&nbsp;
+      </div>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-sm-3"> 
+      <h1>Hours </h1>
+      <div *ngFor= "let item of todayTasks">
+        <span>{{ item.name }}</span>&nbsp;&nbsp;
+        <span>{{ item.totalHours }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>User </h3>
+        <span>{{ user.name }}</span>&nbsp;&nbsp;
+    </div>
+  
+    <div class="col-sm-3">
+      <h3>Progress % </h3>
+    
+        <span>{{ progress }}</span>&nbsp;&nbsp;
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+</div>
